@@ -47,13 +47,13 @@ echo "$0 $@"  # Print the command line for logging
 . ./path.sh
 . ./utils/parse_options.sh
 
-# if ! cuda-compiled; then
-#   cat <<EOF && exit 1
-# This script is intended to be used with GPUs but you have not compiled Kaldi with CUDA
-# If you want to use GPUs (and have them), go to src/, and configure and make on a machine
-# where "nvcc" is installed.
-# EOF
-# fi
+if ! cuda-compiled; then
+  cat <<EOF && exit 1
+This script is intended to be used with GPUs but you have not compiled Kaldi with CUDA
+If you want to use GPUs (and have them), go to src/, and configure and make on a machine
+where "nvcc" is installed.
+EOF
+fi
 
 if [ $stage -le 9 ]; then
     local/chain2/data_prep_common.sh  \
