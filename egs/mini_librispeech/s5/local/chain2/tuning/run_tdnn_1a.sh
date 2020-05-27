@@ -40,12 +40,6 @@ langs="default"  # list of language names
 egs_extra_left_context=5
 egs_extra_right_context=5
 
-# The number of chunks (of length: see $chunk_width above) that we group
-# together for each "speaker" (actually: pseudo-speaker, since we may have
-# to group multiple speaker together in some cases).
-chunks_per_group=4
-
-
 # End configuration section.
 echo "$0 $@"  # Print the command line for logging
 
